@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMJAY TECH SOLUTIONS | Freelance Front-End Web Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Premium Google Fonts for clean corporate readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #060608;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .premium-glass {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 40px -15px rgba(6, 182, 212, 0.2);
+        }
+        
+        /* Premium Ticker Animation Keyframes */
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: flex;
+            width: max-content;
+            animation: ticker 25s linear infinite;
+        }
+        .ticker-container:hover .animate-ticker {
+            animation-play-state: paused;
+        }
+
+        /* Interactive Floating Animations matching layout concepts */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(-3deg); }
+        }
+        @keyframes float-metric {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-6px) scale(1.02); }
+        }
+        
+        .animate-float-left {
+            animation: float-slow 4s ease-in-out infinite;
+        }
+        .animate-float-right {
+            animation: float-delayed 4.5s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        .animate-float-badge {
+            animation: float-metric 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body class="text-zinc-300 selection:bg-cyan-500/30 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 h-20 bg-[#060608]/90 backdrop-blur-md border-b border-zinc-900/50 z-50 flex items-center justify-between px-6 sm:px-12 max-w-6xl mx-auto">
+        <div class="nav-logo text-lg font-bold tracking-wider text-white">
+            EMJAY<span class="text-cyan-400">.TECH</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+            <a href="#about" class="hover:text-cyan-400 transition">About</a>
+            <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+            <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+            <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+        </nav>
+        <a href="#contact" class="hidden sm:inline-flex text-xs font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-800 text-white px-5 py-2.5 rounded-lg hover:border-cyan-400/40 transition">
+            Get a Quote
+        </a>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-8 space-y-28 md:space-y-36 pt-36 pb-16">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="space-y-6 md:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs font-medium text-cyan-400">
+                        🟢 Available for Freelance Projects
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                        Front-End Developer Building Websites That <span class="text-cyan-400">Help Businesses Grow</span>
+                    </h1>
+                    <p class="text-zinc-400 text-base leading-relaxed max-w-xl font-light">
+                        I create clean, fast, and user-friendly websites designed to turn your visitors into customers. Let's build a professional online presence for your business or startup.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#projects" class="bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg transition shadow-lg shadow-cyan-400/10">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Profile Image Area -->
+                <div class="md:col-span-5 flex justify-center items-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center">
+                        
+                        <!-- Base Circular Frame -->
+                        <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden bg-gradient-to-b from-cyan-500/20 to-zinc-950 border-2 border-zinc-800/80 shadow-2xl flex items-center justify-center">
+                            <img src="image.jpg" alt="Emmanuel Ayomide Ajiboye" class="w-full h-full object-cover object-top">
+                        </div>
+
+                        <!-- Left Floating Tech Icon - HTML Badge -->
+                        <div class="animate-float-left absolute left-1 top-1/3 w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl shadow-xl flex items-center justify-center transition-transform hover:scale-110 duration-200">
+                            <span class="text-orange-500 text-sm font-mono font-bold">HTML</span>
+                        </div>
+
+                        <!-- Right Floating Tech Icon - CSS Badge -->
+                        <div class="animate-float-right absolute right-1 top-1/3 w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl shadow-xl flex items-center justify-center transition-transform hover:scale-110 duration-200">
+                            <span class="text-cyan-400 text-sm font-mono font-bold">CSS</span>
+                        </div>
+
+                        <!-- Bottom Floating Tech Icon - JS Badge -->
+                        <div class="animate-float-badge absolute bottom-4 left-1/3 w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl shadow-xl flex items-center justify-center transition-transform hover:scale-110 duration-200">
+                            <span class="text-yellow-400 text-sm font-mono font-bold">JS</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Metric Badges Section -->
+        <section class="border-y border-zinc-900/60 py-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center max-w-4xl mx-auto">
+                <div class="flex items-center justify-center gap-2 text-sm font-medium text-white">
+                    <span class="text-cyan-400 text-lg">✓</span> Mobile Friendly
+                </div>
+                <div class="flex items-center justify-center gap-2 text-sm font-medium text-white">
+                    <span class="text-cyan-400 text-lg">✓</span> Fast Loading
+                </div>
+                <div class="flex items-center justify-center gap-2 text-sm font-medium text-white">
+                    <span class="text-cyan-400 text-lg">✓</span> Responsive Design
+                </div>
+                <div class="flex items-center justify-center gap-2 text-sm font-medium text-white">
+                    <span class="text-cyan-400 text-lg">✓</span> Available for Freelance Projects
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="scroll-mt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4">
+                    <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase block mb-1">Your Partner in Growth</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Meet Emjay Tech</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-5 text-zinc-400 text-base leading-relaxed font-light">
+                    <p>
+                        I help small businesses and startups build modern, responsive websites that look professional and help attract more customers online.
+                    </p>
+                    <p>
+                        Whether you need a landing page, a business website, or a redesign of an existing site, I focus on creating fast, user-friendly experiences that work smoothly across all devices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Services Section -->
+        <section id="services" class="scroll-mt-24">
+            <div class="mb-12 text-center md:text-left">
+                <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase block mb-1">Expert Offerings</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">How I Can Help Your Business</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service Card 1 -->
+                <div class="premium-glass rounded-xl p-6 space-y-4 hover:border-cyan-400/20 transition duration-300">
+                    <div class="text-cyan-400 text-xl font-bold">🚀</div>
+                    <h3 class="text-lg font-bold text-white">Landing Page Development</h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                        Custom landing pages designed to showcase your services, capture leads, and encourage visitors to take action.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="premium-glass rounded-xl p-6 space-y-4 hover:border-cyan-400/20 transition duration-300">
+                    <div class="text-cyan-400 text-xl font-bold">🏢</div>
+                    <h3 class="text-lg font-bold text-white">Business Websites</h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                        Professional websites that help businesses build trust, display their services, and connect with customers.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="premium-glass rounded-xl p-6 space-y-4 hover:border-cyan-400/20 transition duration-300">
+                    <div class="text-cyan-400 text-xl font-bold">🛠️</div>
+                    <h3 class="text-lg font-bold text-white">Website Redesign</h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                        Refresh outdated websites with a modern design, improved usability, and better mobile responsiveness.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="premium-glass rounded-xl p-6 space-y-4 hover:border-cyan-400/20 transition duration-300">
+                    <div class="text-cyan-400 text-xl font-bold">📱</div>
+                    <h3 class="text-lg font-bold text-white">Responsive Web Design</h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                        Websites that look and perform great on phones, tablets, laptops, and desktops.
+                    </p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="premium-glass rounded-xl p-6 space-y-4 hover:border-cyan-400/20 transition duration-300">
+                    <div class="text-cyan-400 text-xl font-bold">💻</div>
+                    <h3 class="text-lg font-bold text-white">Front-End Development</h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                        Clean, modern interfaces built with HTML, CSS, JavaScript, and current web technologies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Featured Projects Section -->
+        <section id="projects" class="scroll-mt-24">
+            <div class="mb-12 text-center md:text-left">
+                <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase block mb-1">Production Work</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Featured Projects</h2>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Project 1 -->
+                <div class="premium-glass rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 items-center hover:border-zinc-800 transition duration-300">
+                    <div class="lg:col-span-6 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-900/60 aspect-video flex items-center justify-center">
+                        <img src="Dentist.jpg" alt="Dental Clinic Landing Page" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">Dental Clinic Landing Page</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                            A modern dental website designed to build trust, showcase services, and make it easy for patients to book appointments.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono font-medium text-cyan-400">
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">HTML5</span>
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">JavaScript</span>
+                        </div>
+                        <div class="pt-2">
+                            <a href="https://dentist-landing-page-pink.vercel.app/" class="inline-flex text-xs font-bold bg-cyan-400 text-black px-5 py-2.5 rounded-lg hover:bg-cyan-300 transition shadow-md shadow-cyan-400/5">Live Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="premium-glass rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 items-center hover:border-zinc-800 transition duration-300">
+                    <div class="lg:col-span-6 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-900/60 aspect-video flex items-center justify-center">
+                        <img src="Real esttate.jpg" alt="Real Estate Landing Page" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">Real Estate Landing Page</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                            A clean and professional real estate website designed to highlight properties and generate inquiries from potential buyers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono font-medium text-cyan-400">
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">HTML5</span>
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">JavaScript</span>
+                        </div>
+                        <div class="pt-2">
+                            <a href="https://real-estate-landing-page-six-beta.vercel.app/" class="inline-flex text-xs font-bold bg-cyan-400 text-black px-5 py-2.5 rounded-lg hover:bg-cyan-300 transition shadow-md shadow-cyan-400/5">Live Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="premium-glass rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 items-center hover:border-zinc-800 transition duration-300">
+                    <div class="lg:col-span-6 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-900/60 aspect-video flex items-center justify-center">
+                        <img src="Cleaning.jpg" alt="Cleaning Company Website" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">Cleaning Company Website</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                            A service-based business website designed to showcase cleaning services, build credibility, and generate customer leads.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono font-medium text-cyan-400">
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">HTML5</span>
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded">JavaScript</span>
+                        </div>
+                        <div class="pt-2">
+                            <a href="https://cleaning-landiing-page.vercel.app/" class="inline-flex text-xs font-bold bg-cyan-400 text-black px-5 py-2.5 rounded-lg hover:bg-cyan-300 transition shadow-md shadow-cyan-400/5">Live Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Core Capabilities -->
+        <section id="skills" class="scroll-mt-24 overflow-hidden w-full">
+            <div class="mb-8 text-center md:text-left">
+                <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase block mb-1">Technical Foundation</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Core Capabilities</h2>
+            </div>
+            
+            <div class="ticker-container relative w-full overflow-hidden py-2 bg-zinc-950/40 border-y border-zinc-900/60">
+                <div class="animate-ticker gap-4 px-2">
+                    
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-orange-400 text-xs">&lt;/&gt;</span> HTML5
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-cyan-400 text-xs">#</span> CSS3
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-yellow-400 text-xs">JS</span> JavaScript
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-teal-400 text-xs">⚡</span> Tailwind CSS
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-purple-400 text-xs">📱</span> Responsive Design
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-emerald-400 text-xs">🔍</span> SEO Basics
+                    </div>
+
+                    <!-- Cloned Duplicated Track Elements for Seamless Loop -->
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-orange-400 text-xs">&lt;/&gt;</span> HTML5
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-cyan-400 text-xs">#</span> CSS3
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-yellow-400 text-xs">JS</span> JavaScript
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-teal-400 text-xs">⚡</span> Tailwind CSS
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-purple-400 text-xs">📱</span> Responsive Design
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 text-zinc-100 px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide shadow-sm flex items-center gap-2 mx-2">
+                        <span class="text-emerald-400 text-xs">🔍</span> SEO Basics
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Testimonial Section -->
+        <section id="testimonials" class="scroll-mt-24">
+            <div class="mb-10 text-center md:text-left">
+                <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase block mb-1">Client Feedback</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">What Client Partners Say</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="premium-glass rounded-xl p-6 flex flex-col justify-between space-y-4">
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light italic leading-relaxed">
+                        "Emjay delivered our landing page exactly on schedule. The interface loads instantly on mobile and our new customer booking count has steadily increased since going live. Very professional communication throughout."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-400">DB</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Dr. David Bradley</h4>
+                            <p class="text-[10px] text-zinc-500">Founder, Bradley Dental Group</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="premium-glass rounded-xl p-6 flex flex-col justify-between space-y-4">
+                    <p class="text-zinc-400 text-xs sm:text-sm font-light italic leading-relaxed">
+                        "Our agency needed a clean, responsive front-end build for a premium real estate project. Emjay took our designs and transformed them into clean, optimized production code with ease. Highly recommended for custom business sites."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-400">SM</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Sarah Miller</h4>
+                            <p class="text-[10px] text-zinc-500">Director, Vanguard Realty Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Call To Action -->
+        <section class="scroll-mt-24 glow-cyan rounded-2xl bg-gradient-to-r from-zinc-950 via-zinc-900/60 to-zinc-950 border border-zinc-800/70 p-8 text-center space-y-6 max-w-4xl mx-auto">
+            <div class="space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Need a Website for Your Business?</h2>
+                <p class="text-zinc-400 text-xs sm:text-sm font-light max-w-xl mx-auto leading-relaxed">
+                    Let’s build a modern, responsive website that helps your business attract more customers and generate more leads.
+                </p>
+            </div>
+            <div class="pt-2">
+                <a href="#contact" class="inline-flex bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-lg transition shadow-md">
+                    Let’s Work Together
+                </a>
+            </div>
+        </section>
+
+        <!-- 8. Contact Section -->
+        <section id="contact" class="scroll-mt-24 max-w-xl mx-auto w-full">
+            <div class="premium-glass rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
+                <div class="text-center space-y-1.5">
+                    <h2 class="text-2xl font-bold text-white">Start Your Project</h2>
+                    <p class="text-zinc-400 text-xs font-light">Send your project requirements over and I will follow up within 24 business hours.</p>
+                </div>
+
+                <form id="contact-form" action="https://formspree.io/f/mzdwllvd" method="POST" class="space-y-4 text-sm">
+                    <div class="space-y-1">
+                        <label class="block text-xs font-semibold text-zinc-300">Your Name / Business Name</label>
+                        <input type="text" name="name" required placeholder="John Doe" class="w-full bg-zinc-950/60 border border-zinc-800 rounded-lg p-3 text-xs text-white placeholder-zinc-700 focus:outline-none focus:border-cyan-400/60 transition">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block text-xs font-semibold text-zinc-300">Email Address</label>
+                        <input type="email" name="email" required placeholder="johndoe@example.com" class="w-full bg-zinc-950/60 border border-zinc-800 rounded-lg p-3 text-xs text-white placeholder-zinc-700 focus:outline-none focus:border-cyan-400/60 transition">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block text-xs font-semibold text-zinc-300">Project Requirements</label>
+                        <textarea name="message" rows="4" required placeholder="Briefly describe what your business needs built..." class="w-full bg-zinc-950/60 border border-zinc-800 rounded-lg p-3 text-xs text-white placeholder-zinc-700 focus:outline-none focus:border-cyan-400/60 transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-bold uppercase tracking-wider py-3 rounded-lg transition shadow-md shadow-cyan-400/10">
+                        Send Message
+                    </button>
+                    <p id="form-status" class="text-center text-xs font-medium mt-2 hidden"></p>
+                </form>
+
+                <div class="border-t border-zinc-900 pt-5 flex justify-center text-xs font-mono text-zinc-500">
+                    <a href="mailto:emjaytechsolutions@gmail.com" class="hover:text-cyan-400 transition">✉ emjaytechsolutions@gmail.com</a>
+                </div>
+            </div>
+
+            <footer class="w-full pt-16 text-center text-[10px] text-zinc-600 tracking-wider font-mono">
+                © 2026 EMJAY TECH SOLUTIONS. ALL RIGHTS RESERVED.
+            </footer>
+        </section>
+
+    </main>
+
+    <script>
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("form-status");
+        const btn = document.getElementById("submit-btn");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerText = "SENDING...";
+            
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                status.classList.remove("hidden", "text-rose-400");
+                status.classList.add("text-cyan-400");
+                status.innerText = "Thank you! Your message was sent successfully. I'll get back to you soon.";
+                form.reset();
+            } else {
+                status.classList.remove("hidden", "text-cyan-400");
+                status.classList.add("text-rose-400");
+                status.innerText = "Oops! Something went wrong. Please check fields and try again.";
+            }
+            btn.disabled = false;
+            btn.innerText = "SEND MESSAGE";
+        });
+    </script>
+</body>
+</html>
